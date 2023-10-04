@@ -1,3 +1,10 @@
 {
-  "files": {}
+  "files": {
+    "user-bangzheng-paxlovid-dmd.csv": {
+      "id": "user/bangzheng/paxlovid-dmd/0964dee3",
+      "url": "https://codelists.opensafely.org/codelist/user/bangzheng/paxlovid-dmd/0964dee3/",
+      "downloaded_at": "2023-10-04 13:55:17.569997Z",
+      "sha": "794d4604acf1dde989100e18aadd80188d9f0eb4"
+    }
+  }
 }
