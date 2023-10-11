@@ -5,33 +5,16 @@ expectations:
 
 actions:
 
-  generate_dataset_202305:
+  generate_dataset:
     run: >
-      ehrql:v0 generate-dataset analysis/dataset_definition.py --output output/dataset_202305.arrow
-      -- --start 2023-05-01 --end 2023-05-31
+      ehrql:v0 generate-dataset analysis/dataset_definition.py --output output/dataset.arrow
     outputs:
       highly_sensitive:
-        dataset: output/dataset_202305.arrow
-
-  generate_dataset_202306:
-    run: >
-      ehrql:v0 generate-dataset analysis/dataset_definition.py --output output/dataset_202306.arrow
-      -- --start 2023-06-01 --end 2023-06-30
-    outputs:
-      highly_sensitive:
-        dataset: output/dataset_202306.arrow
-
-  generate_dataset_202307:
-    run: >
-      ehrql:v0 generate-dataset analysis/dataset_definition.py --output output/dataset_202307.arrow
-      -- --start 2023-07-01 --end 2023-07-31
-    outputs:
-      highly_sensitive:
-        dataset: output/dataset_202307.arrow
+        dataset: output/dataset.arrow
 
   count:
     run: python:latest analysis/count.py
-    needs: [generate_dataset_202305, generate_dataset_202306, generate_dataset_202307]
+    needs: [generate_dataset]
     outputs:
       moderately_sensitive:
         count: output/count.csv
